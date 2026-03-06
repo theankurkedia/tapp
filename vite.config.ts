@@ -4,9 +4,6 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  build: {
-    outDir: 'build',
-  },
   plugins: [
     react(),
     VitePWA({
