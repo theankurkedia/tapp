@@ -1,9 +1,17 @@
-import React from 'react';
+import { test, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+
+vi.mock('socket.io-client', () => ({
+  default: vi.fn(() => ({
+    on: vi.fn(),
+    off: vi.fn(),
+    emit: vi.fn(),
+  })),
+}));
+
 import App from './App';
 
-test('renders source', () => {
+test('renders login form on initial load', () => {
   render(<App />);
-  const linkElement = screen.getByText(/source/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /join/i })).toBeInTheDocument();
 });

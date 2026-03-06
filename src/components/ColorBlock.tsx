@@ -21,7 +21,7 @@ function ColorBlock({
         height: height + '%',
       }}
       onClick={() => {
-        onClick ? onClick() : null;
+        onClick?.();
       }}
     >
       <div

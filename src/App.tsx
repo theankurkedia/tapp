@@ -4,7 +4,7 @@ import { DetailsOverlay, Game } from './components';
 import { SocketContext } from './context';
 import { GameDataType } from './types';
 
-const ENDPOINT = process.env.REACT_APP_ENDPOINT || '';
+const ENDPOINT = import.meta.env.VITE_ENDPOINT || '';
 
 const socket: Socket = socketClient(ENDPOINT, {
   transports: ['websocket', 'polling', 'flashsocket'],
